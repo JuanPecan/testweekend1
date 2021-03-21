@@ -3,10 +3,29 @@
 <p appMovement=red> {{helloWorld()}}</p>
 
 <hr>
+<h2>pipe Exo: |</h2>
+{{ "Hurluberlu" | getChar :3}} Hurluberlu <br>
+{{ "Uber" | getChar :2}} Uber <br>
+{{ "Moto" | getChar :4}} Moto <br>
+<h3>trunc sur 20mots :</h3>
+{{"Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia aliquid praesentium explicabo sequi, beatae ratione atque optio totam id, soluta non eius ipsam unde suscipit molestiae assumenda deleniti sit?" | truncate: 20}}
+<hr>
 
 <app-sizer [(size)]="fontSizePx"></app-sizer>
 <label>FontSize (px): <input [(ngModel)]="fontSizePx"></label>
+{{ "resizable text"| uppercase }}
 <hr>
+
+<hr>
+{{today | date }} <br>
+{{today | date: 'd MMM y' }} | date:'d MMM y'<br> 
+
+<div *ngFor="let item of {'b': 1, 'a': 1} | keyvalue">
+  {{ item.key }} - {{ item.value }}
+</div>
+
+<hr>
+
 
 <app-book-preview [book]="books[0]" (rate)="onRate($event)"></app-book-preview>
 {{bookRate}}

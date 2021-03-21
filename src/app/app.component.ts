@@ -37,8 +37,9 @@ export class AppComponent {
 
   public bookRate:number;
 
-
   public fontSizePx:number = 16;
+
+  public today: number = Date.now();
 
   constructor(){
     this.isAvailable = true;
